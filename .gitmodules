@@ -4,6 +4,6 @@
 [submodule "ArobsPrj/work/bsw/firmware/static/timerSw"]
 	path = ArobsPrj/work/bsw/firmware/static/timerSw
 	url = https://github.com/alexeiguriev/timerSw.git
-[submodule "ArobsPrj/work/bsw/ecal/static/Lcd_1602"]
-	path = ArobsPrj/work/bsw/ecal/static/Lcd_1602
+[submodule "ArobsPrj/work/bsw/ecal/static/Lcd1602"]
+	path = ArobsPrj/work/bsw/ecal/static/Lcd1602
 	url = https://github.com/alexeiguriev/Lcd_1602.git
