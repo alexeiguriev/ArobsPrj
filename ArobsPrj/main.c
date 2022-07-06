@@ -5,7 +5,7 @@
 #include <avr/interrupt.h>
 //#include <xc.h>
 #include <stdio.h>
-#include "LCD1602_lib.h"
+#include "Lcd1602.h"
 #include "TimerSw.h"
 
 void init_PWM_Timer();
@@ -33,8 +33,8 @@ int main(void)
 	{		
 		TimerSwStartup(&timerSwHandle,1000);
 	}
-	lcd_init(); // Initializare LCD
-	lcd_clear();
+	Lcd1602_Init(); // Initializare LCD
+	Lcd1602_Clear();
 	init_PWM_Timer();
 	while(1)
 	{
@@ -46,10 +46,10 @@ int main(void)
 			PWMstate++;
 			TimerSwStartup(&timerSwHandle,1000);
 		}
-		set_pos(0,0);
-		lcd_Print_str("Hello World!");
-		set_pos(0,1);
-		lcd_PrintVall(PWMstate);
+		Lcd1602_SetPosition(0,0);
+		Lcd1602_PrintString("Hello World!");
+		Lcd1602_SetPosition(0,1);
+		Lcd1602_PrintIntVall(PWMstate);
 	}
 }
 
