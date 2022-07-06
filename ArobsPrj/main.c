@@ -7,17 +7,22 @@
 #include <stdio.h>
 #include "LCD1602_lib.h"
 
-#include "LCD1602_lib.h"
 void init_PWM_Timer();
 int PWMstate = 0;
+int PWMstateIntermadiar = 0;
 
 #define LED PD4
 
 ISR (TIMER1_OVF_vect)    // Timer1 ISR
 {
 	PORTD ^= (1 << LED);
-	PWMstate++;
-	TCNT1 = 31987;   // for 1 sec at 16 MHz  63974
+	PWMstateIntermadiar++;
+	if(PWMstateIntermadiar >= 1000)
+	{
+		PWMstate++;
+		PWMstateIntermadiar = 0;
+	}
+	TCNT1 = 49535;   // for 1 sec at 16 MHz  63974
 }
 
 int main(void)
@@ -39,10 +44,10 @@ int main(void)
 void init_PWM_Timer(){
 	DDRD = (0x01 << LED);     //Configure the PORTD4 as output
 	
-	TCNT1 = 63974;   // for 1 sec at 16 MHz
+	TCNT1 = 49535;   // for 1 sec at 16 MHz
 
 	TCCR1A = 0x00;
-	TCCR1B = (1<<CS10) | (1<<CS12);;  // Timer mode with 1024 prescler
+	TCCR1B = (1<<CS10);  // Timer mode with 1 prescler
 	TIMSK = (1 << TOIE1) ;   // Enable timer1 overflow interrupt(TOIE1)
 	sei();
 }

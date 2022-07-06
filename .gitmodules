@@ -1,0 +1,3 @@
+[submodule "ArobsPrj/work/bsw/firmware/static/general"]
+	path = ArobsPrj/work/bsw/firmware/static/general
+	url = https://github.com/alexeiguriev/general.git
