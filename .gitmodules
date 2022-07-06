@@ -1,3 +1,6 @@
 [submodule "ArobsPrj/work/bsw/firmware/static/general"]
 	path = ArobsPrj/work/bsw/firmware/static/general
 	url = https://github.com/alexeiguriev/general.git
+[submodule "ArobsPrj/work/bsw/firmware/static/timerSw"]
+	path = ArobsPrj/work/bsw/firmware/static/timerSw
+	url = https://github.com/alexeiguriev/timerSw.git

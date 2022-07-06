@@ -115,7 +115,12 @@
     <ListValues>
       <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.7.374\include\</Value>
       <Value>../LCD1602_lib</Value>
+      <Value>../work/bsw/firmware/static/general</Value>
       <Value>../work/bsw/firmware/static/general/if</Value>
+      <Value>../work/bsw/firmware/static/timerSw</Value>
+      <Value>../work/bsw/firmware/static/timerSw/if</Value>
+      <Value>../work/bsw/firmware/static</Value>
+      <Value>../work/bsw/firmware/config</Value>
     </ListValues>
   </avrgcc.compiler.directories.IncludePaths>
   <avrgcc.compiler.optimization.level>Optimize debugging experience (-Og)</avrgcc.compiler.optimization.level>
@@ -147,6 +152,21 @@
     <Compile Include="main.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="work\bsw\firmware\config\TimerSwCfg\TimerSwCfg.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="work\bsw\firmware\static\timerSw\if\TimerSw.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="work\bsw\firmware\static\timerSw\src\TimerSw.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="work\bsw\firmware\static\timerSw\src\TimerSwBase.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="work\bsw\firmware\static\timerSw\src\TimerSwBase.h">
+      <SubType>compile</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="LCD1602_lib" />
@@ -154,7 +174,16 @@
     <Folder Include="work\bsw" />
     <Folder Include="work\bsw\firmware" />
     <Folder Include="work\bsw\firmware\config" />
+    <Folder Include="work\bsw\firmware\config\TimerSwCfg" />
     <Folder Include="work\bsw\firmware\static" />
+    <Folder Include="work\bsw\firmware\static\general\" />
+    <Folder Include="work\bsw\firmware\static\general\if" />
+    <Folder Include="work\bsw\firmware\static\general\pd" />
+    <Folder Include="work\bsw\firmware\static\general\pd\d" />
+    <Folder Include="work\bsw\firmware\static\general\src" />
+    <Folder Include="work\bsw\firmware\static\timerSw" />
+    <Folder Include="work\bsw\firmware\static\timerSw\if\" />
+    <Folder Include="work\bsw\firmware\static\timerSw\src\" />
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
 </Project>
