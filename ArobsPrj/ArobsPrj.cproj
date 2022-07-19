@@ -98,55 +98,58 @@
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <ToolchainSettings>
       <AvrGcc>
-  <avrgcc.common.Device>-mmcu=atmega32 -B "%24(PackRepoDir)\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32"</avrgcc.common.Device>
-  <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
-  <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
-  <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
-  <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
-  <avrgcc.common.outputfiles.usersignatures>False</avrgcc.common.outputfiles.usersignatures>
-  <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
-  <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
-  <avrgcc.compiler.symbols.DefSymbols>
-    <ListValues>
-      <Value>DEBUG</Value>
-    </ListValues>
-  </avrgcc.compiler.symbols.DefSymbols>
-  <avrgcc.compiler.directories.IncludePaths>
-    <ListValues>
-      <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.7.374\include\</Value>
-      <Value>../LCD1602_lib</Value>
-      <Value>../work/bsw/firmware/static/general</Value>
-      <Value>../work/bsw/firmware/static/general/if</Value>
-      <Value>../work/bsw/firmware/static/timerSw</Value>
-      <Value>../work/bsw/firmware/static/timerSw/if</Value>
-      <Value>../work/bsw/firmware/static</Value>
-      <Value>../work/bsw/firmware/config</Value>
-      <Value>../work/bsw/ecal</Value>
-      <Value>../work/bsw/ecal/config</Value>
-      <Value>../work/bsw/ecal/static</Value>
-      <Value>../work/bsw/ecal/static/Lcd1602/if</Value>
-      <Value>../work/asw</Value>
-      <Value>../work/asw/StateMachine</Value>
-      <Value>../work/asw/StateMachine/if</Value>
-    </ListValues>
-  </avrgcc.compiler.directories.IncludePaths>
-  <avrgcc.compiler.optimization.level>Optimize debugging experience (-Og)</avrgcc.compiler.optimization.level>
-  <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
-  <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
-  <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
-  <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
-  <avrgcc.linker.libraries.Libraries>
-    <ListValues>
-      <Value>libm</Value>
-    </ListValues>
-  </avrgcc.linker.libraries.Libraries>
-  <avrgcc.assembler.general.IncludePaths>
-    <ListValues>
-      <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.7.374\include\</Value>
-    </ListValues>
-  </avrgcc.assembler.general.IncludePaths>
-  <avrgcc.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcc.assembler.debugging.DebugLevel>
-</AvrGcc>
+        <avrgcc.common.Device>-mmcu=atmega32 -B "%24(PackRepoDir)\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32"</avrgcc.common.Device>
+        <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+        <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+        <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+        <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+        <avrgcc.common.outputfiles.usersignatures>False</avrgcc.common.outputfiles.usersignatures>
+        <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcc.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>DEBUG</Value>
+          </ListValues>
+        </avrgcc.compiler.symbols.DefSymbols>
+        <avrgcc.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.7.374\include\</Value>
+            <Value>../LCD1602_lib</Value>
+            <Value>../work/bsw/firmware/static/general</Value>
+            <Value>../work/bsw/firmware/static/general/if</Value>
+            <Value>../work/bsw/firmware/static/timerSw</Value>
+            <Value>../work/bsw/firmware/static/timerSw/if</Value>
+            <Value>../work/bsw/firmware/static</Value>
+            <Value>../work/bsw/firmware/config</Value>
+            <Value>../work/bsw/ecal</Value>
+            <Value>../work/bsw/ecal/config</Value>
+            <Value>../work/bsw/ecal/static</Value>
+            <Value>../work/bsw/ecal/static/Lcd1602/if</Value>
+            <Value>../work/asw</Value>
+            <Value>../work/asw/StateMachine</Value>
+            <Value>../work/asw/StateMachine/if</Value>
+            <Value>../work/bsw/ecal/static/Disp7Seg</Value>
+            <Value>../work/bsw/ecal/static/Disp7Seg/if</Value>
+            <Value>../work/bsw/ecal/config/Disp7SegCfg</Value>
+          </ListValues>
+        </avrgcc.compiler.directories.IncludePaths>
+        <avrgcc.compiler.optimization.level>Optimize debugging experience (-Og)</avrgcc.compiler.optimization.level>
+        <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+        <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
+        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+        <avrgcc.linker.libraries.Libraries>
+          <ListValues>
+            <Value>libm</Value>
+          </ListValues>
+        </avrgcc.linker.libraries.Libraries>
+        <avrgcc.assembler.general.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.7.374\include\</Value>
+          </ListValues>
+        </avrgcc.assembler.general.IncludePaths>
+        <avrgcc.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcc.assembler.debugging.DebugLevel>
+      </AvrGcc>
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
@@ -162,7 +165,22 @@
     <Compile Include="work\asw\StateMachine\src\StateMachine.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="work\bsw\ecal\config\Disp7SegCfg\Disp7SegCfg.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="work\bsw\ecal\config\Disp7SegCfg\Disp7SegCfg.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="work\bsw\ecal\config\Lcd1602Cfg\Lcd1602Cfg.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="work\bsw\ecal\static\Disp7Seg\if\Disp7Seg.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="work\bsw\ecal\static\Disp7Seg\if\Disp7SegTypes.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="work\bsw\ecal\static\Disp7Seg\src\Disp7Seg.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="work\bsw\ecal\static\Lcd1602\if\Lcd1602.h">
@@ -205,7 +223,11 @@
     <Folder Include="work\asw\StateMachine\if" />
     <Folder Include="work\asw\StateMachine\src" />
     <Folder Include="work\bsw" />
+    <Folder Include="work\bsw\ecal\config\Disp7SegCfg" />
+    <Folder Include="work\bsw\ecal\static\Disp7Seg\if" />
+    <Folder Include="work\bsw\ecal\static\Disp7Seg\src" />
     <Folder Include="work\bsw\ecal\static\Lcd1602\" />
+    <Folder Include="work\bsw\ecal\static\Disp7Seg" />
     <Folder Include="work\bsw\firmware" />
     <Folder Include="work\bsw\firmware\config" />
     <Folder Include="work\bsw\firmware\config\TimerCfg" />

@@ -8,45 +8,54 @@
 #include "Lcd1602.h"
 #include "TimerCfg/TimerCfg.h"
 #include "TimerSw.h"
+#include "Disp7Seg.h"
 
 void init_PWM_Timer();
 int PWMstate = 0;
 int PWMstateIntermadiar = 0;
 
+float testValue = 1.111;
+float oldtestValue = 0;
 TimerSwHandle timerSwHandle;
-
+StatusError err;
 #define LED PD4
 
 int main(void)
 {
-	StatusError err;
-	
-	TimerSwInitParam *pTimerSwInitParam = TimerGetIntervalPointerCfg();
-	
-	err = TimerSwInit(pTimerSwInitParam,&timerSwHandle);
-	
-	if (err == StatusErrNone)
-	{		
-		TimerSwStartup(&timerSwHandle,1000);
-	}
-	
-	Lcd1602_Init(); // Initializare LCD
-	Lcd1602_Clear();
+	//StatusError err;
+	//
+	//TimerSwInitParam *pTimerSwInitParam = TimerGetIntervalPointerCfg();
+	//
+	//err = TimerSwInit(pTimerSwInitParam,&timerSwHandle);
+	//
+	//if (err == StatusErrNone)
+	//{
+		//TimerSwStartup(&timerSwHandle,15);
+	//}
+	//
+	//Lcd1602_Init(); // Initializare LCD
+	//Lcd1602_Clear();
 	init_PWM_Timer();
+	Disp7SegInit();
 	while(1)
 	{
-		//StateMachineIterate();
-		err = TimerSwIsExpired(&timerSwHandle);
-		if (err == StatusErrTime)
+		if (oldtestValue != testValue)
 		{
-			PORTD ^= (1 << LED);
-			PWMstate++;
-			TimerSwStartup(&timerSwHandle,1000);
+			err = Disp7SegSetVal(testValue);
 		}
-		Lcd1602_SetPosition(0,0);
-		Lcd1602_PrintString("Hello World!");
-		Lcd1602_SetPosition(0,1);
-		Lcd1602_PrintIntVall(PWMstate);
+		Disp7SegRutine();
+		////StateMachineIterate();
+		//err = TimerSwIsExpired(&timerSwHandle);
+		//if (err == StatusErrTime)
+		//{
+			//PORTD ^= (1 << LED);
+			//PWMstate++;
+			//TimerSwStartup(&timerSwHandle,1000);
+		//}
+		//Lcd1602_SetPosition(0,0);
+		//Lcd1602_PrintString("Hello World!");
+		//Lcd1602_SetPosition(0,1);
+		//Lcd1602_PrintIntVall(PWMstate);
 	}
 }
 
