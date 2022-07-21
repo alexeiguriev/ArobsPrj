@@ -14,11 +14,18 @@ void init_PWM_Timer();
 int PWMstate = 0;
 int PWMstateIntermadiar = 0;
 
-float testValue = 1.111;
+float testValue = 12.34;
 float oldtestValue = 0;
 TimerSwHandle timerSwHandle;
 StatusError err;
 #define LED PD4
+
+uint8_t digit1 = 1;
+uint8_t digit2 = 2;
+uint8_t digit3 = 3;
+uint8_t digit4 = 4;
+
+bool changeValue = true;
 
 int main(void)
 {
@@ -39,10 +46,21 @@ int main(void)
 	Disp7SegInit();
 	while(1)
 	{
-		if (oldtestValue != testValue)
+		if(changeValue)
 		{
-			err = Disp7SegSetVal(testValue);
+			Disp7SegSetByDigitCostum(0,0b00000010);
+			//Disp7SegSetByDigit(0, digit1, false);
+			Disp7SegSetByDigit(1, digit2, true);
+			Disp7SegSetByDigit(2, digit3, false);
+			Disp7SegSetByDigit(3, digit4, false);		
+			changeValue = false;	
 		}
+		
+		//if (oldtestValue != testValue)
+		//{
+			//err = Disp7SegSetFloatVal(testValue);
+			//oldtestValue = testValue;
+		//}
 		Disp7SegRutine();
 		////StateMachineIterate();
 		//err = TimerSwIsExpired(&timerSwHandle);
@@ -61,7 +79,7 @@ int main(void)
 
 
 void init_PWM_Timer(){
-	DDRD = (0x01 << LED);     //Configure the PORTD4 as output
+//	DDRD = (0x01 << LED);     //Configure the PORTD4 as output
 	
 	TimerInitCfg();
 	TimerEnableCfg(true);
