@@ -131,6 +131,11 @@
             <Value>../work/bsw/ecal/static/Disp7Seg</Value>
             <Value>../work/bsw/ecal/static/Disp7Seg/if</Value>
             <Value>../work/bsw/ecal/config/Disp7SegCfg</Value>
+            <Value>../work/bsw/firmware/static/uart</Value>
+            <Value>../work/bsw/firmware/static/uart/if</Value>
+            <Value>../work/bsw/firmware/static/uart/pi/i</Value>
+            <Value>../work/bsw/firmware/config/uartCnf</Value>
+            <Value>../work/asw/UartTets</Value>
           </ListValues>
         </avrgcc.compiler.directories.IncludePaths>
         <avrgcc.compiler.optimization.level>Optimize debugging experience (-Og)</avrgcc.compiler.optimization.level>
@@ -165,6 +170,12 @@
     <Compile Include="work\asw\StateMachine\src\StateMachine.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="work\asw\UartTets\UartTest.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="work\asw\UartTets\UartTest.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="work\bsw\ecal\config\Disp7SegCfg\Disp7SegCfg.c">
       <SubType>compile</SubType>
     </Compile>
@@ -189,6 +200,9 @@
     <Compile Include="work\bsw\ecal\static\Lcd1602\src\Lcd1602.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="work\bsw\firmware\config\System.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="work\bsw\firmware\config\TimerSwCfg\TimerSwCfg.h">
       <SubType>compile</SubType>
     </Compile>
@@ -196,6 +210,12 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="work\bsw\firmware\config\TimerCfg\TimerCfg.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="work\bsw\firmware\config\uartCnf\UartCnf.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="work\bsw\firmware\config\uartCnf\UartCnf.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="work\bsw\firmware\static\general\if\general.h">
@@ -216,9 +236,19 @@
     <Compile Include="work\bsw\firmware\static\timerSw\src\TimerSwBase.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="work\bsw\firmware\static\uart\if\Uart.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="work\bsw\firmware\static\uart\if\UartTypes.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="work\bsw\firmware\static\uart\pi\i\Uart.c">
+      <SubType>compile</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="work" />
+    <Folder Include="work\asw\UartTets" />
     <Folder Include="work\asw\StateMachine" />
     <Folder Include="work\asw\StateMachine\if" />
     <Folder Include="work\asw\StateMachine\src" />
@@ -230,6 +260,7 @@
     <Folder Include="work\bsw\ecal\static\Disp7Seg" />
     <Folder Include="work\bsw\firmware" />
     <Folder Include="work\bsw\firmware\config" />
+    <Folder Include="work\bsw\firmware\config\uartCnf" />
     <Folder Include="work\bsw\firmware\config\TimerCfg" />
     <Folder Include="work\bsw\firmware\config\TimerSwCfg" />
     <Folder Include="work\bsw\firmware\static" />
@@ -238,6 +269,7 @@
     <Folder Include="work\bsw\firmware\static\general\pd" />
     <Folder Include="work\bsw\firmware\static\general\pd\d" />
     <Folder Include="work\bsw\firmware\static\general\src" />
+    <Folder Include="work\bsw\firmware\static\uart" />
     <Folder Include="work\bsw\firmware\static\timerSw" />
     <Folder Include="work\bsw\firmware\static\timerSw\if\" />
     <Folder Include="work\bsw\firmware\static\timerSw\src\" />
@@ -248,6 +280,11 @@
     <Folder Include="work\bsw\ecal\static\Lcd1602\if\" />
     <Folder Include="work\bsw\ecal\static\Lcd1602\src\" />
     <Folder Include="work\asw" />
+    <Folder Include="work\bsw\firmware\static\uart\if" />
+    <Folder Include="work\bsw\firmware\static\uart\pd\d" />
+    <Folder Include="work\bsw\firmware\static\uart\pi" />
+    <Folder Include="work\bsw\firmware\static\uart\pd" />
+    <Folder Include="work\bsw\firmware\static\uart\pi\i" />
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
 </Project>

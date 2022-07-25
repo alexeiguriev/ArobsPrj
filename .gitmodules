@@ -7,3 +7,6 @@
 [submodule "ArobsPrj/work/bsw/ecal/static/Lcd1602"]
 	path = ArobsPrj/work/bsw/ecal/static/Lcd1602
 	url = https://github.com/alexeiguriev/Lcd_1602.git
+[submodule "ArobsPrj/work/bsw/firmware/static/uart"]
+	path = ArobsPrj/work/bsw/firmware/static/uart
+	url = https://github.com/alexeiguriev/uart.git
